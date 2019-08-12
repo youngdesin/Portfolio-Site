@@ -26,6 +26,16 @@
     
     //create wireframe material
     material = new THREE.ShaderMaterial({
+        uniforms: {
+            tExplosion: {
+                type:'t',
+                value: THREE.ImageUtils.loadTexture('')
+            },
+            time: {
+                type: 'f',
+                value: 0.0
+            }
+        },
         vertexShader: document.getElementById( 'vertexShader' ).textContent,
       fragmentShader: document.getElementById( 'fragmentShader' ).textContent
       } );
@@ -48,6 +58,7 @@
     } );
     
     function render() {
+        material.uniforms[ 'time' ].value = .00025 * ( Date.now() - start);
         renderer.render( scene, camera );
       requestAnimationFrame ( render );
     }
