@@ -29,7 +29,7 @@
         uniforms: {
             tExplosion: {
                 type:'t',
-                value: THREE.ImageUtils.loadTexture('')
+                value: THREE.TextureLoader('')
             },
             time: {
                 type: 'f',
