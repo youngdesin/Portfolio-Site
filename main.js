@@ -13,7 +13,7 @@ window.addEventListener( 'load', function() {
     
     // create a scene
     scene = new THREE.Scene();
-
+    scene.background = new THREE.Color( 0xff0000 );
     // create a camera the size of the browser window
     // and place it 100 units away, looking towards the center of the scene
     camera = new THREE.PerspectiveCamera( 
@@ -21,7 +21,7 @@ window.addEventListener( 'load', function() {
         window.innerWidth / window.innerHeight, 
         1, 
         10000 );
-    camera.position.z = 100;
+    camera.position.z = 200;
     camera.target = new THREE.Vector3( 0, 0, 0 );
 
     scene.add( camera );
